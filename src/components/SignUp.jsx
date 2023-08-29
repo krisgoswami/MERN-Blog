@@ -1,6 +1,6 @@
 import { Button, Card, TextField, Typography, Link } from '@mui/material';
 
-export default function Login() {
+export default function SignUp() {
     return <div>
         <center>
             <div
@@ -8,7 +8,7 @@ export default function Login() {
                     marginTop: 100,
                     marginBottom: 20
                 }}>
-                <Typography variant='h6'>Welcome to Blog App. Login Below</Typography>
+                <Typography variant='h6'>Welcome to Blog App. Sign up today</Typography>
             </div>
         </center>
         <center>
@@ -29,15 +29,15 @@ export default function Login() {
                     label='Password'
                     type='password'
                 /><br /><br />
-                <Button variant='contained'>Login</Button><br /><br />
+                <Button variant='contained'>Sign Up</Button><br /><br />
                 <div
                     style={{
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center'
                     }}>
-                    <Typography style={{ marginRight: 10 }}>Don't have an account?</Typography>
-                    <Link href="#">Sign Up</Link>
+                    <Typography style={{ marginRight: 10 }}>Have an account already?</Typography>
+                    <Link href="/login">Login</Link>
                 </div>
             </Card>
         </center>

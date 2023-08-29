@@ -1,6 +1,8 @@
 import { Button, Typography } from '@mui/material';
+import { useNavigate, Outlet, Link } from 'react-router-dom';
 
 export default function AppBar() {
+    const navigate = useNavigate();
     return <div style={{
         display: 'flex',
         justifyContent: 'space-between',
@@ -15,6 +17,7 @@ export default function AppBar() {
             }}>Blog App</Typography>
         <Button
             variant='text'
+            onClick={() => { navigate("/login") }}
             style={{
                 color: 'white'
             }}>Login</Button>
