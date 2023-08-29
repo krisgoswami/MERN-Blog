@@ -11,9 +11,11 @@ export default function AppBar() {
     }}>
         <Typography
             variant='h5'
+            onClick={() => { navigate("/") }}
             style={{
                 color: 'white',
-                marginLeft: 10
+                marginLeft: 10,
+                cursor: 'pointer'
             }}>Blog App</Typography>
         <Button
             variant='text'
