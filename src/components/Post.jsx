@@ -5,9 +5,9 @@ export default function Post() {
         <Card
             variant="outlined"
             style={{
-                width: 500,
+                width: 350,
                 height: 500,
-                margin: 10,
+                // margin: 10,
                 // padding: 10,
                 borderRadius: 10
             }}>
@@ -57,7 +57,6 @@ export default function Post() {
                     26/08/2023 21:45
                 </Typography>
             </div>
-
         </Card>
     </div>
 }
