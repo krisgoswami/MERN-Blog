@@ -38,7 +38,7 @@ export default function Post() {
             <div style={{
                 display: "flex",
                 justifyContent: 'space-between',
-                marginTop: '30%',
+                marginTop: '35%',
                 marginLeft: 20,
                 marginRight: 20,
             }}>
