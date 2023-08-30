@@ -7,7 +7,7 @@ export default function Post() {
             style={{
                 width: 350,
                 height: 500,
-                // margin: 10,
+                marginTop: 20,
                 // padding: 10,
                 borderRadius: 10
             }}>

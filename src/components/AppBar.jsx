@@ -7,7 +7,8 @@ export default function AppBar() {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        backgroundColor: '#262626'
+        backgroundColor: '#262626',
+        height: 50
     }}>
         <Typography
             variant='h5'
