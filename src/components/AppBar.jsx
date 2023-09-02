@@ -1,8 +1,8 @@
 import { Button, Typography } from '@mui/material';
-import { useNavigate, Outlet, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function AppBar() {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     return <div style={{
         display: 'flex',
         justifyContent: 'space-between',
@@ -12,7 +12,9 @@ export default function AppBar() {
     }}>
         <Typography
             variant='h5'
-            onClick={() => { navigate("/") }}
+            LinkComponent={Link}
+            to='/'
+            // onClick={() => { navigate("/") }}
             style={{
                 color: 'white',
                 marginLeft: 10,
@@ -20,7 +22,9 @@ export default function AppBar() {
             }}>Blog App</Typography>
         <Button
             variant='text'
-            onClick={() => { navigate("/login") }}
+            LinkComponent={Link}
+            to='/login'
+            // onClick={() => { navigate("/login") }}
             style={{
                 color: 'white'
             }}>Login</Button>

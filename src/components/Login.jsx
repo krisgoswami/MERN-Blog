@@ -1,5 +1,5 @@
-import { Button, Card, TextField, Typography, Link } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { Button, Card, TextField, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
     return <div>
@@ -17,7 +17,8 @@ export default function Login() {
                 variant='outlined'
                 style={{
                     width: 400,
-                    padding: 20
+                    padding: 20,
+                    borderRadius: 10
                 }}>
                 <TextField
                     fullWidth={true}
@@ -37,8 +38,13 @@ export default function Login() {
                         justifyContent: 'center',
                         alignItems: 'center'
                     }}>
-                    <Typography style={{ marginRight: 10 }}>Don't have an account?</Typography>
-                    <Link href="/signup">Sign Up</Link>
+                    <Typography>Don't have an account?</Typography>
+                    <Button
+                        variant='text'
+                        LinkComponent={Link}
+                        to='/signup'
+                    >Sign Up</Button>
+                    {/* <Link href="/signup">Sign Up</Link> */}
                 </div>
             </Card>
         </center>
