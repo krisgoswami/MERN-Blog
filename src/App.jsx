@@ -6,6 +6,7 @@ import Landing from './components/Landing';
 import './App.css'
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
+import Blogs from './pages/blogs';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
             <Route path='/' element={<Landing />} />
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<SignUp />} />
+            <Route path='/blogs' element={<Blogs />} />
           </Routes>
         </Router>
       </Provider>

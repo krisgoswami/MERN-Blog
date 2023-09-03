@@ -1,4 +1,4 @@
-import { Box, Button, ButtonBase, Typography } from '@mui/material';
+import { Box, Button, ButtonBase, Tabs, Tab } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
@@ -27,6 +27,8 @@ export default function AppBar() {
 
     return <div style={{
         display: 'flex',
+        marginLeft: 'auto',
+        marginRight: 'auto',
         justifyContent: 'space-between',
         alignItems: 'center',
         backgroundColor: '#262626',
@@ -38,10 +40,28 @@ export default function AppBar() {
             to='/'
             style={{
                 color: 'white',
-                marginLeft: 10,
+                marginLeft: 20,
                 fontSize: 30,
                 fontFamily: 'monospace'
             }}>Blog App</ButtonBase>
+
+        <Button
+            variant='text'
+            LinkComponent={Link}
+            to='/blogs'
+            style={{
+                color: 'white',
+                marginLeft: 200
+            }}>Blogs</Button>
+        <Button
+            variant='text'
+            LinkComponent={Link}
+            to='/blogs'
+            style={{
+                color: 'white',
+                // marginLeft: 200
+            }}>My Blogs</Button>
+
         <Box display={"flex"} marginLeft="auto">
             {!isLogin && <>
                 <Button
@@ -49,7 +69,8 @@ export default function AppBar() {
                     LinkComponent={Link}
                     to='/login'
                     style={{
-                        color: 'white'
+                        color: 'white',
+                        marginRight: 20
                     }}>Login</Button>
             </>}
             {isLogin && <>
@@ -59,7 +80,8 @@ export default function AppBar() {
                     LinkComponent={Link}
                     to='/'
                     style={{
-                        color: 'white'
+                        color: 'white',
+                        marginRight: 20
                     }}>Logout</Button>
             </>}
 
