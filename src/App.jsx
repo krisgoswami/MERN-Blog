@@ -4,19 +4,23 @@ import Login from './components/Login'
 import SignUp from './components/SignUp'
 import Landing from './components/Landing';
 import './App.css'
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 
 function App() {
 
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
-      <Router>
-        <AppBar />
-        <Routes>
-          <Route path='/' element={<Landing />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/signup' element={<SignUp />} />
-        </Routes>
-      </Router>
+      <Provider store={store}>
+        <Router>
+          <AppBar />
+          <Routes>
+            <Route path='/' element={<Landing />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/signup' element={<SignUp />} />
+          </Routes>
+        </Router>
+      </Provider>
     </div>
   )
 }
