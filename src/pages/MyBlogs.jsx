@@ -27,6 +27,8 @@ export default function MyBlogs() {
     return <div>
         {blogs && blogs.length > 0 ? (
             blogs.map((blog) => <Post
+                id={blog._id}
+                isUser={true}
                 title={blog.title}
                 description={blog.description}
                 image={blog.image}

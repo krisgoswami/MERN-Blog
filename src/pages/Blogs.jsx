@@ -30,11 +30,13 @@ export default function Blogs() {
             // flexDirection: 'row'
         }}>
         {blogs && blogs.map((blog) => <Post
-            title={blog.title}
-            description={blog.description}
-            image={blog.image}
-            username={blog.user.username}
+            id={blog?._id}
+            isUser={localStorage.getItem('userId') === blog?.user?._id}
+            title={blog?.title}
+            description={blog?.description}
+            image={blog?.image}
+            username={blog?.user?.username}
             time={blog.createdAt}
         />)}
-    </div>
+    </div >
 }
