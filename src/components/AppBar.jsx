@@ -62,6 +62,15 @@ export default function AppBar() {
                 // marginLeft: 200
             }}>My Blogs</Button>
         </>}
+        {isLogin && <><Button
+            variant='text'
+            LinkComponent={Link}
+            to='/create-blog'
+            style={{
+                color: 'white',
+                // marginLeft: 200
+            }}>Create Blog</Button>
+        </>}
 
         <Box display={"flex"} marginLeft="auto">
             {!isLogin && <>

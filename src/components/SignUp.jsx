@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { Button, TextField, Typography, Box } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 export default function SignUp() {
     const navigate = useNavigate();
@@ -32,7 +33,7 @@ export default function SignUp() {
                 password: inputs.password
             })
             if (data.success) {
-                alert('User registered successfully');
+                toast.success('User registered successfully');
                 navigate('/login');
             }
         } catch (error) {

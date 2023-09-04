@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { authActions } from '../redux/store';
+import toast from 'react-hot-toast';
 
 
 export default function Login() {
@@ -37,8 +38,10 @@ export default function Login() {
             if (data.success) {
                 localStorage.setItem("userId", data?.user._id);
                 dispatch(authActions.login());
-                navigate('/my-blogs')
+                toast.success("Login successful");
+                navigate('/my-blogs');
             }
+
         } catch (error) {
             console.log(error)
         }

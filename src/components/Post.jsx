@@ -31,7 +31,7 @@ export default function Post({ title, description, image, username, time }) {
             <Typography
                 variant="body1"
                 style={{
-                    width: '85%',
+                    width: '90%',
                     marginLeft: 20,
                 }}>{description}</Typography>
 
