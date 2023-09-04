@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AppBar from './components/AppBar'
-import Login from './components/Login'
-import SignUp from './components/SignUp'
-import Landing from './components/Landing';
+import Login from './pages/Login'
+import SignUp from './pages/SignUp'
+import Landing from './pages/Landing';
 import './App.css'
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
