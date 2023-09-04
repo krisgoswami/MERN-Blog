@@ -79,7 +79,7 @@ export default function AppBar() {
                     onClick={handleLogout}
                     variant='text'
                     LinkComponent={Link}
-                    to='/'
+                    to='/login'
                     style={{
                         color: 'white',
                         marginRight: 20

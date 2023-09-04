@@ -35,8 +35,9 @@ export default function Login() {
                 password: inputs.password
             })
             if (data.success) {
+                localStorage.setItem("userId", data?.user._id);
                 dispatch(authActions.login());
-                navigate('/')
+                navigate('/my-blogs')
             }
         } catch (error) {
             console.log(error)
