@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react"
 import axios from "axios";
+import Post from "../components/Post";
+import Blog from "../components/Blog"
 
 export default function Blogs() {
 
@@ -20,6 +22,19 @@ export default function Blogs() {
         getAllBlogs();
     }, [])
 
-    return <>
-    </>
+    return <div
+        style={{
+            // margin: 20,
+            // display: 'flex',
+            // justifyContent: 'space-between',
+            // flexDirection: 'row'
+        }}>
+        {blogs && blogs.map((blog) => <Post
+            title={blog.title}
+            description={blog.description}
+            image={blog.image}
+            username={blog.user.username}
+            time={blog.createdAt}
+        />)}
+    </div>
 }

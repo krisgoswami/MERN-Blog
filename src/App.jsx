@@ -7,6 +7,7 @@ import './App.css'
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
 import Blogs from './pages/blogs';
+import MyBlogs from './pages/MyBlogs';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<SignUp />} />
             <Route path='/blogs' element={<Blogs />} />
+            <Route path='/my-blogs' element={<MyBlogs />} />
           </Routes>
         </Router>
       </Provider>

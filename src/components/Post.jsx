@@ -1,13 +1,13 @@
 import { Card, Typography } from "@mui/material";
 
-export default function Post() {
+export default function Post({ title, description, image, username, time }) {
     return <div>
         <Card
             variant="outlined"
             style={{
-                width: 350,
-                height: 500,
-                marginTop: 20,
+                width: '30%',
+                margin: 'auto',
+                marginTop: 10,
                 // padding: 10,
                 borderRadius: 10
             }}>
@@ -15,10 +15,10 @@ export default function Post() {
                 <img style={{
                     objectFit: 'cover',
                     width: '100%',
-                    height: '200px',
+                    height: '250px',
                     objectPosition: 'top'
                 }}
-                    src="https://e2.365dm.com/23/08/768x432/skysports-bruno-fernandes-man-utd_6263669.jpg?20230826164906"></img>
+                    src={image}></img>
             </center>
             <Typography
                 variant="h6"
@@ -27,18 +27,19 @@ export default function Post() {
                     marginTop: 10,
                     marginLeft: 20,
                     marginBottom: 10
-                }}>Captain Bruno wins it for United</Typography>
+                }}>{title}</Typography>
             <Typography
                 variant="body1"
                 style={{
-                    width: '80%',
+                    width: '85%',
                     marginLeft: 20,
-                }}>Bruno Fernandes converts the winning penalty sealing all 3 points for Manchester United</Typography>
+                }}>{description}</Typography>
 
             <div style={{
                 display: "flex",
                 justifyContent: 'space-between',
-                marginTop: '35%',
+                marginTop: '10%',
+                marginBottom: '5%',
                 marginLeft: 20,
                 marginRight: 20,
             }}>
@@ -47,14 +48,14 @@ export default function Post() {
                     style={{
                         fontWeight: 'bold'
                     }}>
-                    By Krishanu
+                    {username}
                 </Typography>
                 <Typography
                     variant='body2'
                     style={{
                         fontWeight: 'bold',
                     }}>
-                    26/08/2023 21:45
+                    {time}
                 </Typography>
             </div>
         </Card>
