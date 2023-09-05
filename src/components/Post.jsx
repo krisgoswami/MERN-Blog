@@ -20,6 +20,10 @@ export default function Post({
         navigate(`/blog-details/${id}`);
     }
 
+    const handleExpand = () => {
+        navigate(`/blog/${id}`);
+    }
+
     // const handleDelete = async (blogId) => {
     //     try {
     //         const { data } = await axios.delete(`http://localhost:8080/api/v1/blog/deleteBlog/${id}`);
@@ -32,7 +36,12 @@ export default function Post({
     //     }
     // }
 
-    return <div>
+    return <div
+        onClick={handleExpand}
+        style={{
+            cursor: 'pointer'
+        }}
+    >
         <Card
             variant="outlined"
             style={{
