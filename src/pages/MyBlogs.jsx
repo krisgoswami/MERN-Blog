@@ -32,6 +32,7 @@ export default function MyBlogs() {
                 title={blog.title}
                 description={blog.description}
                 image={blog.image}
+                textbody={blog.textbody}
                 username={blog.user.username}
                 time={blog.createdAt}
             />)) : (

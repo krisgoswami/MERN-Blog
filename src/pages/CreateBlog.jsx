@@ -34,6 +34,7 @@ export default function CreateBlog() {
                 title: inputs.title,
                 description: inputs.description,
                 image: inputs.image,
+                textbody: inputs.textbody,
                 user: id
             })
             if (data?.success) {
@@ -97,6 +98,17 @@ export default function CreateBlog() {
                     type='text'
                     required
                     value={inputs.image}
+                    onChange={handleChange}
+                /><br /><br />
+                <InputLabel sx={{ mb: 1, mt: 1, fontSize: '25px', fontWeight: 'bold' }}>Detailed Post</InputLabel>
+                < TextField
+                    fullWidth={true}
+                    variant='outlined'
+                    label='Detailed Post'
+                    name='textbody'
+                    type='text'
+                    required
+                    value={inputs.textbody}
                     onChange={handleChange}
                 /><br /><br />
                 <Button

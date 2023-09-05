@@ -20,7 +20,8 @@ export default function BlogDetails() {
                 setInputs({
                     title: data?.blog.title,
                     description: data?.blog.description,
-                    image: data?.blog.image
+                    image: data?.blog.image,
+                    textbody: data?.blog.textbody
                 });
             }
         } catch (error) {
@@ -50,6 +51,7 @@ export default function BlogDetails() {
                 title: inputs.title,
                 description: inputs.description,
                 image: inputs.image,
+                textbody: inputs.textbody,
                 user: id
             })
             if (data?.success) {
@@ -100,7 +102,6 @@ export default function BlogDetails() {
                 < TextField
                     fullWidth={true}
                     variant='outlined'
-                    // label='Title'
                     name='title'
                     type='text'
                     required
@@ -111,7 +112,6 @@ export default function BlogDetails() {
                 <TextField
                     fullWidth={true}
                     variant='outlined'
-                    // label='Description'
                     name='description'
                     type='text'
                     required
@@ -121,13 +121,22 @@ export default function BlogDetails() {
                 <InputLabel sx={{ mb: 1, mt: 1, fontSize: '25px', fontWeight: 'bold' }}>Image Link</InputLabel>
                 < TextField
                     fullWidth={true}
-                    sx={{ mb: 2 }}
                     variant='outlined'
-                    // label='Image Link'
                     name='image'
                     type='text'
                     required
                     value={inputs.image}
+                    onChange={handleChange}
+                />
+                <InputLabel sx={{ mb: 1, mt: 1, fontSize: '25px', fontWeight: 'bold' }}>Detailde Post</InputLabel>
+                < TextField
+                    fullWidth={true}
+                    sx={{ mb: 2 }}
+                    variant='outlined'
+                    name='textbody'
+                    type='text'
+                    required
+                    value={inputs.textbody}
                     onChange={handleChange}
                 />
                 <Box

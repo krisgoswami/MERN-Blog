@@ -20,17 +20,17 @@ export default function Post({
         navigate(`/blog-details/${id}`);
     }
 
-    const handleDelete = async (blogId) => {
-        try {
-            const { data } = await axios.delete(`http://localhost:8080/api/v1/blog/deleteBlog/${id}`);
-            if (data?.success) {
-                toast.success('Post Deleted');
-            }
+    // const handleDelete = async (blogId) => {
+    //     try {
+    //         const { data } = await axios.delete(`http://localhost:8080/api/v1/blog/deleteBlog/${id}`);
+    //         if (data?.success) {
+    //             toast.success('Post Deleted');
+    //         }
 
-        } catch (error) {
-            console.log(error);
-        }
-    }
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }
 
     return <div>
         <Card
