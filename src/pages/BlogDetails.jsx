@@ -31,7 +31,7 @@ export default function BlogDetails() {
 
     useEffect(() => {
         getBlogDetails();
-    }, [id]);
+    }, []);
 
 
     //handle on change
@@ -51,8 +51,7 @@ export default function BlogDetails() {
                 title: inputs.title,
                 description: inputs.description,
                 image: inputs.image,
-                textbody: inputs.textbody,
-                user: id
+                textbody: inputs.textbody
             })
             if (data?.success) {
                 toast.success('Blog updated');
