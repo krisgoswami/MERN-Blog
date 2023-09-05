@@ -2,7 +2,8 @@ import { Card, IconButton, Typography, Box, CardMedia } from "@mui/material";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useNavigate } from "react-router-dom";
-
+import axios from "axios";
+import toast from 'react-hot-toast';
 
 export default function Post({
     title,
@@ -18,6 +19,19 @@ export default function Post({
     const handleEdit = () => {
         navigate(`/blog-details/${id}`);
     }
+
+    const handleDelete = async (blogId) => {
+        try {
+            const { data } = await axios.delete(`http://localhost:8080/api/v1/blog/deleteBlog/${id}`);
+            if (data?.success) {
+                toast.success('Post Deleted');
+            }
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return <div>
         <Card
             variant="outlined"
@@ -80,11 +94,11 @@ export default function Post({
                             paddingLeft={2}
                         >
                             <IconButton onClick={handleEdit}>
-                                <EditIcon />
+                                <EditIcon color="info" />
                             </IconButton>
-                            <IconButton>
-                                <DeleteIcon />
-                            </IconButton>
+                            {/* <IconButton onClick={handleDelete}>
+                                <DeleteIcon color="error" />
+                            </IconButton> */}
                         </Box>
                     )}
                 </div>

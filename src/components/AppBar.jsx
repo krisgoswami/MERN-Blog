@@ -3,12 +3,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { authActions } from '../redux/store';
+import toast from 'react-hot-toast';
 
 export default function AppBar() {
     // const navigate = useNavigate();
 
     //global
-    const isLogin = useSelector((state) => state.isLogin);
+    let isLogin = useSelector((state) => state.isLogin);
+    isLogin = isLogin || localStorage.getItem('userId');
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -19,7 +21,9 @@ export default function AppBar() {
     const handleLogout = () => {
         try {
             dispatch(authActions.logout());
-            navigate('/');
+            localStorage.clear();
+            toast.success("You've been logged out");
+            navigate('/login');
         } catch (error) {
             console.log(error);
         }

@@ -64,11 +64,12 @@ export default function Login() {
             >
                 <Typography
                     variant='h6'
-                    marginBottom={3}
+                    marginBottom={1}
                 >Welcome. Please Login Below.</Typography>
 
                 < TextField
                     fullWidth={true}
+                    sx={{ m: 1 }}
                     variant='outlined'
                     label='Email'
                     name='email'
@@ -79,6 +80,7 @@ export default function Login() {
                 /><br />
                 <TextField
                     fullWidth={true}
+                    sx={{ m: 1 }}
                     variant='outlined'
                     label='Password'
                     name='password'
@@ -89,6 +91,7 @@ export default function Login() {
                 /><br />
                 <Button
                     variant='contained'
+                    sx={{ m: 1 }}
                     type='submit'
                 >Login</Button><br />
                 <div style={{

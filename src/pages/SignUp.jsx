@@ -58,10 +58,11 @@ export default function SignUp() {
             >
                 <Typography
                     variant='h6'
-                    marginBottom={3}
+                    marginBottom={1}
                 >Welcome to Blog App. Sign up today.</Typography>
                 <TextField
                     fullWidth={true}
+                    sx={{ m: 1 }}
                     variant='outlined'
                     label='Name'
                     name='username'
@@ -71,6 +72,7 @@ export default function SignUp() {
                 /><br />
                 <TextField
                     fullWidth={true}
+                    sx={{ m: 1 }}
                     variant='outlined'
                     type='email'
                     label='Email'
@@ -81,6 +83,7 @@ export default function SignUp() {
                 /><br />
                 <TextField
                     fullWidth={true}
+                    sx={{ m: 1 }}
                     variant='outlined'
                     label='Password'
                     name='password'
@@ -91,6 +94,7 @@ export default function SignUp() {
                 /><br />
                 <Button
                     variant='contained'
+                    sx={{ m: 1 }}
                     type='submit'
                 >Sign Up</Button><br />
                 <div

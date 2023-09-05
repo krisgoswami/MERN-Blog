@@ -13,15 +13,16 @@ export default function CreateBlog() {
     const [inputs, setInputs] = useState({
         title: '',
         description: '',
-        image: ''
-    })
+        image: '',
+        textbody: ''
+    });
 
     //handle on change
     const handleChange = (e) => {
         setInputs(prevState => ({
             ...prevState,
             [e.target.name]: e.target.value
-        }))
+        }));
     }
 
     //handle submit

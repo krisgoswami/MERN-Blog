@@ -61,6 +61,19 @@ export default function BlogDetails() {
         }
     }
 
+    const handleDelete = async () => {
+        try {
+            const { data } = await axios.delete(`http://localhost:8080/api/v1/blog/deleteBlog/${id}`);
+            if (data?.success) {
+                toast.success('Post Deleted');
+                navigate('/my-blogs');
+            }
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
 
     return <>
         <form onSubmit={handleSubmit} >
@@ -108,6 +121,7 @@ export default function BlogDetails() {
                 <InputLabel sx={{ mb: 1, mt: 1, fontSize: '25px', fontWeight: 'bold' }}>Image Link</InputLabel>
                 < TextField
                     fullWidth={true}
+                    sx={{ mb: 2 }}
                     variant='outlined'
                     // label='Image Link'
                     name='image'
@@ -115,12 +129,23 @@ export default function BlogDetails() {
                     required
                     value={inputs.image}
                     onChange={handleChange}
-                /><br /><br />
-                <Button
-                    variant='contained'
-                    type='submit'
-                    color="success"
-                >Update</Button>
+                />
+                <Box
+                    display='flex'
+                    alignItems={'center'}
+                    justifyContent={'space-between'}
+                >
+                    <Button
+                        variant='contained'
+                        type='submit'
+                        color="success"
+                    >Update</Button>
+                    <Button
+                        variant='contained'
+                        onClick={handleDelete}
+                        color="error"
+                    >Delete</Button>
+                </Box>
             </Box>
         </form>
     </>
