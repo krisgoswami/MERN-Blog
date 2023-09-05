@@ -11,6 +11,7 @@ import MyBlogs from './pages/MyBlogs';
 import CreateBlog from './pages/CreateBlog';
 import { Toaster } from 'react-hot-toast';
 import BlogDetails from './pages/BlogDetails';
+import BlogExpand from './pages/BlogExpand';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
             <Route path='/my-blogs' element={<MyBlogs />} />
             <Route path='/create-blog' element={<CreateBlog />} />
             <Route path='/blog-details/:id' element={<BlogDetails />} />
+            <Route path='/blog/:id' element={<BlogExpand />} />
           </Routes>
         </Router>
       </Provider>
