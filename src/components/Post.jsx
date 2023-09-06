@@ -1,9 +1,9 @@
-import { Card, IconButton, Typography, Box, CardMedia } from "@mui/material";
+import { Card, IconButton, Typography, Box, CardMedia, Button } from "@mui/material";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import toast from 'react-hot-toast';
+// import axios from "axios";
+// import toast from 'react-hot-toast';
 
 export default function Post({
     title,
@@ -36,16 +36,12 @@ export default function Post({
     //     }
     // }
 
-    return <div
-        onClick={handleExpand}
-        style={{
-            cursor: 'pointer'
-        }}
-    >
+    return <div >
         <Card
             variant="outlined"
             style={{
-                width: '30%',
+                maxWidth: '30%',
+                minWidth: 500,
                 margin: 'auto',
                 marginTop: 10,
                 // padding: 10,
@@ -56,20 +52,23 @@ export default function Post({
                 height={'250px'}
                 image={image}
             ></CardMedia>
-            <Typography
-                variant="h6"
-                style={{
-                    fontWeight: 'bold',
-                    marginTop: 10,
-                    marginLeft: 20,
-                    marginBottom: 10
-                }}>{title}</Typography>
-            <Typography
-                variant="body1"
-                style={{
-                    width: '90%',
-                    marginLeft: 20,
-                }}>{description}</Typography>
+            <Box>
+                <Typography
+                    variant="h6"
+                    style={{
+                        fontWeight: 'bold',
+                        width: '90%',
+                        marginTop: 10,
+                        marginLeft: 20,
+                        marginBottom: 10
+                    }}>{title}</Typography>
+                <Typography
+                    variant="body1"
+                    style={{
+                        width: '90%',
+                        marginLeft: 20,
+                    }}>{description}</Typography>
+            </Box>
 
             <div style={{
                 display: "flex",
@@ -100,7 +99,7 @@ export default function Post({
                     {isUser && (
                         <Box
                             display={'flex'}
-                            paddingLeft={2}
+                            paddingLeft={25}
                         >
                             <IconButton onClick={handleEdit}>
                                 <EditIcon color="info" />
@@ -110,6 +109,12 @@ export default function Post({
                             </IconButton> */}
                         </Box>
                     )}
+                </div>
+                <div>
+                    <Button
+                        disableRipple={true}
+                        onClick={handleExpand}
+                    >Read More</Button>
                 </div>
             </div>
         </Card>

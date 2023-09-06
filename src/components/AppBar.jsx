@@ -36,7 +36,8 @@ export default function AppBar() {
         justifyContent: 'space-between',
         alignItems: 'center',
         backgroundColor: '#262626',
-        height: 50
+        height: 50,
+        position: 'sticky'
     }}>
         <ButtonBase
             disableRipple={true}
