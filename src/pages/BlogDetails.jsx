@@ -3,6 +3,7 @@ import { Box, Button, InputLabel, TextField, TextareaAutosize, Typography } from
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { BASE_URL } from '../services/helper';
 
 export default function BlogDetails() {
 
@@ -14,7 +15,7 @@ export default function BlogDetails() {
     //get blog details
     const getBlogDetails = async () => {
         try {
-            const { data } = await axios.get(`http://localhost:8080/api/v1/blog/getBlog/${id}`)
+            const { data } = await axios.get(`${BASE_URL}/api/v1/blog/getBlog/${id}`)
             if (data?.success) {
                 setBlog(data?.blog);
                 setInputs({
@@ -47,7 +48,7 @@ export default function BlogDetails() {
         e.preventDefault();
 
         try {
-            const { data } = await axios.put(`http://localhost:8080/api/v1/blog/updateBlog/${id}`, {
+            const { data } = await axios.put(`${BASE_URL}/api/v1/blog/updateBlog/${id}`, {
                 title: inputs.title,
                 description: inputs.description,
                 image: inputs.image,
@@ -64,7 +65,7 @@ export default function BlogDetails() {
 
     const handleDelete = async () => {
         try {
-            const { data } = await axios.delete(`http://localhost:8080/api/v1/blog/deleteBlog/${id}`);
+            const { data } = await axios.delete(`${BASE_URL}/api/v1/blog/deleteBlog/${id}`);
             if (data?.success) {
                 toast.success('Post Deleted');
                 navigate('/my-blogs');

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Button, TextField, Typography, Box } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import { BASE_URL } from '../services/helper';
 
 export default function SignUp() {
     const navigate = useNavigate();
@@ -27,7 +28,7 @@ export default function SignUp() {
         e.preventDefault();
 
         try {
-            const { data } = await axios.post("http://localhost:8080/api/v1/user/signup", {
+            const { data } = await axios.post(`${BASE_URL}/api/v1/user/signup`, {
                 username: inputs.username,
                 email: inputs.email,
                 password: inputs.password

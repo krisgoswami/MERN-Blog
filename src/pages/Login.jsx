@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { authActions } from '../redux/store';
 import toast from 'react-hot-toast';
+import { BASE_URL } from '../services/helper';
 
 
 export default function Login() {
@@ -31,7 +32,7 @@ export default function Login() {
         e.preventDefault();
 
         try {
-            const { data } = await axios.post('http://localhost:8080/api/v1/user/login', {
+            const { data } = await axios.post(`${BASE_URL}/api/v1/user/login`, {
                 email: inputs.email,
                 password: inputs.password
             })

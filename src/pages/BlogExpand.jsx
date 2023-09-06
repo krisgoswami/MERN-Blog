@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Box } from "@mui/material";
 import axios from "axios";
+import { BASE_URL } from '../services/helper';
 
 export default function BlogExpand() {
 
@@ -14,7 +15,7 @@ export default function BlogExpand() {
     //get blog details
     const getBlogDetails = async () => {
         try {
-            const { data } = await axios.get(`http://localhost:8080/api/v1/blog/getBlog/${blogid}`)
+            const { data } = await axios.get(`${BASE_URL}/api/v1/blog/getBlog/${blogid}`)
             if (data?.success) {
                 setBlog(data?.blog);
                 setInputs({

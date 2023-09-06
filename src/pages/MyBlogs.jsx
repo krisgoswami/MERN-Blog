@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Post from "../components/Post";
+import { BASE_URL } from '../services/helper';
 
 
 export default function MyBlogs() {
@@ -11,7 +12,7 @@ export default function MyBlogs() {
     const getUserBlogs = async () => {
         try {
             const id = localStorage.getItem('userId');
-            const { data } = await axios.get(`http://localhost:8080/api/v1/blog/userBlogs/${id}`);
+            const { data } = await axios.get(`${BASE_URL}/api/v1/blog/userBlogs/${id}`);
             if (data?.success) {
                 setBlogs(data?.userBlog.blogs);
             }

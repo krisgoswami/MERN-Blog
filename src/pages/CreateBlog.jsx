@@ -3,6 +3,7 @@ import { Box, Button, InputLabel, TextField, TextareaAutosize, Typography } from
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast from 'react-hot-toast';
+import { BASE_URL } from '../services/helper';
 
 export default function CreateBlog() {
 
@@ -30,7 +31,7 @@ export default function CreateBlog() {
         e.preventDefault();
 
         try {
-            const { data } = await axios.post('http://localhost:8080/api/v1/blog/createBlog', {
+            const { data } = await axios.post(`${BASE_URL}/api/v1/blog/createBlog`, {
                 title: inputs.title,
                 description: inputs.description,
                 image: inputs.image,
