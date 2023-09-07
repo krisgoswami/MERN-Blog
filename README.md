@@ -4,3 +4,6 @@ This is a basic blog app where users can look at blogs, sign up and can create a
 
 - Check out the web application [here](https://mernblogapp-by-krish.netlify.app).
 
+- Tech stacks used: Vite + React, MUI, ExpressJS, MongoDB, Node.
+- You can find the backend repo [here](https://github.com/krisgoswami/MERN-Blog-Backend.git).
+
