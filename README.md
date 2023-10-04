@@ -23,7 +23,7 @@ This is a basic blog app where users can look at blogs, sign up and can create a
 ## Features
 
 - View existing blogs
-- 
+  
   ![Screenshot (66)](https://github.com/krisgoswami/MERN-Blog/assets/91143716/d93d4a0a-de6f-44ba-8de6-dd8c3961d4ea)
 
 - Sign up as a new user
